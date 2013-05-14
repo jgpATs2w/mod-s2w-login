@@ -1,0 +1,8 @@
+1364736411|error|s2w#ERROR on query 'Array'
+1364736491|error|s2w#ERROR on query 'INSERT INTO main (uname, poema, email) VALUES ('eleuteron2','wwwwww','tu@mundo.net')'ERROR:  duplicate key value violates unique constraint "main_uname_key"
+1365267488|debug|s2w.login.mod.php#query SELECT count(uname) FROM main WHERE uname='eleuteron' AND poema='dddddd'
+1365267509|debug|s2w.login.mod.php#query SELECT count(uname) FROM main WHERE uname='eleuteron' AND poema='dddddd'
+1365267517|debug|s2w.login.mod.php#query SELECT count(uname) FROM main WHERE uname='eleuteron' AND poema='134679'
+1367592202|info|s2w.login.mod.php#notice [2] pg_pconnect() [<a href='function.pg-pconnect'>function.pg-pconnect</a>]: Unable to connect to PostgreSQL server: could not translate host name &quot;dbname=&quot; to address: Name or service not known
+1367592252|debug|s2w.login.mod.php#query SELECT count(uname) FROM main WHERE uname='eleuteron' AND poema='3333333'
+1367592252|info|s2w.login.mod.php#notice [2] Cannot modify header information - headers already sent by (output started at /var/www/mod/s2w/log/php/s2w.log.mod.php:60)

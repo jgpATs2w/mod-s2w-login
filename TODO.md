@@ -1,0 +1,3 @@
+- Añadir login con Mozilla Persona
+- Subir el proyecto a Github
+- Crear documentacion

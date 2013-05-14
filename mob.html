@@ -1,0 +1,51 @@
+
+<link rel="stylesheet" type="text/css" href="css/s2w_login.mob.css"></link>
+<link rel="stylesheet" type="text/css" href="../toast/s2w_toast.css"></link>
+
+<script type="text/javascript" src="../log/js/s2w_log.js"></script>
+<script type="text/javascript" src="../ajax/s2w.ajax.js"></script>
+<script type="text/javascript" src="js/s2w.login.js"></script>
+<div id="login">
+	<input id="uname" type="text" autofocus>
+	<label id="label_uname">&nbsp;</label>
+	<input id="poema" type="password">
+	<label id="label_poema">&nbsp;</label>
+	<input id="email" type="email" style="display:none"> 
+	<label id="label_email">&nbsp;</label>
+	<input id="check_s2w_remember" type="checkbox">Recuerdame
+	<button id="button_s2w_login">Login</button>
+	<a id="a_s2w_login_new" href="#">nuevo usuario</a>
+	<div id="div_s2w_ajax_status" style="display:none">&nbps;</div>
+	<div id="div_s2w_ajax_console" style="display:none">&nbps;</div>
+</div>
+
+<script>
+	var s2w = {};
+		s2w.log = new S2W_Log();
+		s2w.debug = true;
+		s2w.ajaxObjects = [];
+		s2w.login = new S2W_Login();
+	
+	document.getElementById('button_s2w_login').onclick = function(){
+		if(s2w.login.readyToSend()){
+			s2w.login.submit();
+		}else
+			s2w.log.error(this, 'should recheck the inputs');
+			
+		}
+	document.getElementById('a_s2w_login_new').onclick = function(){
+		but = document.getElementById('button_s2w_login');
+		anch = document.getElementById('a_s2w_login_new');
+		email = document.getElementById('email');
+		if(but.innerHTML == "Login"){
+			email.style.display = "block";
+			but.innerHTML = "Registrar";
+			anch.innerHTML = "login";
+		}else{
+			email.style.display = "none";
+			but.innerHTML = "Login";
+			anch.innerHTML = "nuevo usuario";
+			
+		} 
+	}
+</script>

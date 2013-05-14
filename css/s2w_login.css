@@ -1,0 +1,79 @@
+@font-face{
+	font-family: go-boom;
+	src: url('../res/go-boom.ttf')
+}
+
+#s2w_login {
+	font-family: go-boom, arial;
+	width: 220px;
+	/*position: absolute; top: 5px; right: 5px;*/
+	margin-top: 10px; margin-right: 5px;
+	border:0.5px solid #bebebe;
+	border-radius:18px;-moz-border-radius:18px;-webkit-border-radius:18px;
+	text-align: center;
+}
+#s2w_login input{
+	position: relative; display: block;
+	font-size: 150%;
+	vertical-align: middle;
+	width: 200px;
+	margin-top: 20px;
+	color: #CCCCCC;
+}
+#s2w_login label{
+	font-size: 100%;
+	color: red;
+	display: none;
+}
+#s2w_login button{
+	opacity: 80%;
+	margin-top: 20px; margin-bottom: 10px;
+	border-radius: 5px 5px 5px 5px;
+    font-size: 16px;
+    padding: 9px;
+    width: 100%;
+    background: -webkit-gradient(linear, center top, center bottom, from(#66FF66), to(#55FF55));
+	background: -webkit-linear-gradient(#66FF66, #55FF55);
+	background: -moz-linear-gradient(#66FF66, #55FF55);
+	background: -o-linear-gradient(#66FF66, #55FF55);
+	background: -ms-linear-gradient(#66FF66, #55FF55);
+	background: linear-gradient(#66FF66, #55FF55);
+    border-color: #5CA941;
+    color: #EEFFEE;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    -moz-box-sizing: border-box;
+    display: block;
+    outline: medium none;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.075);
+    font-weight: bold;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+#s2w_login button:hover{
+	background: -moz-linear-gradient(top,#55EE55 0%,#44BB44);
+    background: -web-kit-gradient(linear, left top, left bottom,from(#55EE55),to(#44BB44));
+	background: -o-linear-gradient(#55EE55, #44BB44);
+	background: -ms-linear-gradient(#55EE55, #44BB44);
+	background: linear-gradient(#55EE55, #44BB44);
+}
+#s2w_login button:focus{
+	background: -moz-linear-gradient(top,#33AA33 0%,#229922);
+    background: -web-kit-gradient(linear, left top, left bottom,from(#33AA33),to(#229922));
+	background: -o-linear-gradient(#33AA33, #229922);
+	background: -ms-linear-gradient(#33AA33, #229922);
+	background: linear-gradient(#33AA33, #229922);
+}
+#s2w_login #check_s2w_remember{
+	position: absolute;
+	margin-top: 4px; margin-left: 20px;
+	width: 50px;
+}
+#s2w_login #div_s2w_login_status{
+	height: 2em;
+	display: none;
+	background-color: yellow;
+	opacity: 0.7;
+}
