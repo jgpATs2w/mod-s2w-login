@@ -42,14 +42,14 @@ function S2W_Login (div_id){
 	
 	this.submit = function(){ this.submitLogin();}
 	
-	s2w.rpc.url = 'http://gpslibre.es/mod/s2w/login/php/s2w.login.mod.php';
 	this.submitLogin = function(){
+		s2w.rpc.url = this.serverurl;
 		s2w.rpc.onSuccess = function(result){
 								if(result){
 									if(result[0].count == 1){
 										updateStatus('ok');
 										localStorage.setItem('s2w_uname', s2w.getValue('uname'));
-										location.href = s2w.login.url;
+										location.href = s2w.login.redirect;
 									}else
 										updateStatus('usuario o password <br> erroneos')
 								}else
@@ -62,6 +62,7 @@ function S2W_Login (div_id){
 		s2w.rpc.dbQuery(query);
 	}
 	this.submitRegister = function(){
+		s2w.rpc.url = this.serverurl;
 		s2w.rpc.onSuccess = function(Response){
 								if(Response.result){
 										updateStatus('ok');
@@ -79,7 +80,7 @@ function S2W_Login (div_id){
 																"'"+s2w.getValue('poema')+"',"+
 																"'"+s2w.getValue('email')+"')";
 							
-		s2w.rpc.post('http://gpslibre.es/mod/s2w/login2/php/s2w.login.mod.php',"\\s2w\\db\\query",query);
+		s2w.rpc.post(this.serverurl,"\\s2w\\db\\query",query);
 	}
 	function input_onfocus(){
 		this.value = (this.value != s2w.get(this, s2w.DEFAULTS))? this.value : '';
@@ -171,5 +172,6 @@ S2W_Login.prototype.toString = function(){return "[object S2W_Login]";}
 window.addEventListener('load', function(){
 	s2w.login = new S2W_Login();
 		s2w.login.status = document.getElementById('div_s2w_login_status');
-		s2w.login.url = "http://sens2web.es";
+		s2w.login.redirect = "http://sens2web.es";
+		s2w.login.serverurl = 'http://localhost/mod/s2w/login/php/s2w.login.mod.php';
 });
